@@ -1,6 +1,8 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import VueRouter from 'vue-router';
+import Home from '../views/Home.vue';
+import hikesIndex from '../views/hikesIndex.vue';
+import hikesNew from '../views/hikesNew.vue';
 
 Vue.use(VueRouter)
 
@@ -9,6 +11,16 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/hikes',
+    name: 'hikes',
+    component: hikesIndex
+  },
+  {
+    path: '/hikes/new',
+    name: 'hikesNew',
+    component: hikesNew
   },
   {
     path: '/about',
