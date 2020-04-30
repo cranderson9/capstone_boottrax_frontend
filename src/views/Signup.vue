@@ -38,11 +38,11 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      first_name: "Robert",
-      last_name: "Robertson",
-      email: "rob@gmail.com",
-      password: "password",
-      passwordConfirmation: "password",
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: "",
+      passwordConfirmation: "",
       errors: []
     };
   },
