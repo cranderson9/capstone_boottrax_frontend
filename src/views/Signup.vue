@@ -38,11 +38,11 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      first_name: "",
-      last_name: "",
-      email: "",
-      password: "",
-      passwordConfirmation: "",
+      first_name: "Robert",
+      last_name: "Robertson",
+      email: "rob@gmail.com",
+      password: "password",
+      passwordConfirmation: "password",
       errors: []
     };
   },
@@ -55,11 +55,7 @@ export default {
         password: this.password
       };
       axios
-        .post("/api/sessions", params)
-        .then(response => {
-          axios.defaults.headers.common["Authorization"] =
-            "Bearer " + response.data.jwt;
-          localStorage.setItem("jwt", response.data.jwt);
+        .post("/api/users", params).then(response => {
           this.$router.push("/");
         })
         .catch(error => {
