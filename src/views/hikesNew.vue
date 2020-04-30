@@ -16,7 +16,10 @@ export default {
   data: function() {
     return {
       message: "Welcome to Vue.js!",
-      start_location: ""
+      start_location: "",
+      end_location: "",
+      miles: "",
+      notes: ""
     };
   },
   created: function() {},

@@ -2,7 +2,7 @@
   <div class="index">
     <h1>{{ message }}</h1>
     <div v-bind:key=hike.id v-for="hike in hikes"> 
-      <p>id: {{hike.hike_id}}</p>
+      <p>id: {{hike.id}}</p>
       <p>user id: {{hike.user_id}}</p>
       <p>Status: {{hike.status}}</p>
       <p>Start Location: {{hike.start_location}}</p>

@@ -4,7 +4,10 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>|
       <router-link to="/hikes">All Hikes</router-link> |
-      <router-link to="/hikes/new">New Hike</router-link>
+      <router-link to="/hikes/new">New Hike</router-link> |
+      <router-link to="/signup">Sign Up</router-link> |
+      <router-link to="/login">Log in</router-link> |
+      <router-link to="/logout">Log out</router-link>
     </div>
     <router-view/>
   </div>
