@@ -11,10 +11,11 @@
 export default {
   data: function() {
     return {
-      message: "BootTrax"
+      message: "BootTrax",
     };
   },
-  created: function() {},
+  created: function() {
+  },
   methods: {}
 };
 </script>
