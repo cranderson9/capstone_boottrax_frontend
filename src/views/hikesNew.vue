@@ -3,7 +3,12 @@
 <template>
   <div class="New Hike">
     <h1>{{ message }}</h1>
-    <button v-on:click='startHike()'>Start New Hike</button>
+    <p> Starting location:<input type='text' v-model='startLocation'></p>
+    <p> End location:<input type='text' v-model='endLocation'></p>
+    <p> Miles:<input type='text' v-model='miles'></p>
+    <p> Notes:<input type='text' v-model='notes'></p>
+    <p> Pictures:<input type='text' v-model='pictures'></p>
+    <button v-on:click='newHike()'>Start New Hike</button>
     <div id= 'map'></div>
   </div>
 </template>
@@ -19,10 +24,12 @@ export default {
   data: function() {
     return {
       message: "Start a new hike",
-      start_location: "",
-      end_location: "",
+      startLocation: "",
+      endLocation: "",
       miles: "",
-      notes: ""
+      notes: "",
+      pictures: "",
+      errors: [],
     };
   },
   mounted: function() {
@@ -46,11 +53,22 @@ export default {
     ); 
   },
   methods: {
-    startHike: function() {
+    newHike: function() {
       console.log('starting a hike');
       var params = {
-        start_location: this.start_location
+        start_location: this.startLocation,
+        end_location: this.endLocation,
+        notes: this.notes, 
+        miles: this.miles,
+        pictures: this.pictures
       };
+      axios.post('/api/hikes', params).then(response => {
+        console.log(response.data);
+        this.$router.push("/hikes");
+      }).catch(error => {
+        this.errors = error.response.data.errors;
+        this.status = error.response.status;
+      })
     }
   }
 };
