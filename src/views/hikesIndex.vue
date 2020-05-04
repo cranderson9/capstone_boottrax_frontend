@@ -6,9 +6,10 @@
       <p>user id: {{hike.user_id}}</p>
       <p>Status: {{hike.status}}</p>
       <p>Start Location: {{hike.start_location}}</p>
-      <p>End Location: {{hike.End_location}}</p>
+      <p>End Location: {{hike.end_location}}</p>
       <p>Miles: {{hike.miles}}</p>
       <p>Notes: {{hike.notes}}</p>
+      <img v-bind:src="hike.pictures[0].picture_file">
       <hr>
     </div>
   </div>

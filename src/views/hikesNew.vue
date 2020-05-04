@@ -24,6 +24,7 @@ export default {
   data: function() {
     return {
       message: "Start a new hike",
+
       startLocation: "",
       endLocation: "",
       miles: "",

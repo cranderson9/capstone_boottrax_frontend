@@ -36,7 +36,7 @@
 export default {
   methods: {
     isLoggedIn: function() {
-      console.log('i am checking login status');
+      // console.log('i am checking login status');
       if (localStorage.getItem('jwt')) {
         return true;
       } else {
