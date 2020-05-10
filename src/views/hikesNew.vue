@@ -5,6 +5,7 @@
     <h1>{{ message }}</h1>
     <!-- <p> Starting location:<input type='text' v-model='startLocation'></p>
     <p> End location:<input type='text' v-model='endLocation'></p> -->
+    <p> Name of hike:<input type='text' v-model='name'></p>
     <p> Miles:<input type='text' v-model='miles'></p>
     <p> Notes:<input type='text' v-model='notes'></p>
     <button v-on:click='newHike()'>Save Hike</button>
@@ -24,6 +25,7 @@ export default {
     return {
       message: "Log a hike",
       miles: "",
+      name: "",
       notes: "",
       pictures: "",
       errors: [],
@@ -54,6 +56,7 @@ export default {
       console.log('starting a hike');
       var params = {
         notes: this.notes, 
+        name: this.name, 
         miles: this.miles,
         pictures: this.pictures
       };

@@ -40,7 +40,7 @@ export default {
       };
       axios.post('/api/pictures', params).then(response => {
         console.log(response.data);
-        this.$router.push("/hikes");
+        this.$router.push("/hikes/pictures");
       }).catch(error => {
         this.errors = error.response.data.errors;
         this.status = error.response.status;

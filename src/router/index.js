@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import hikesIndex from '../views/hikesIndex.vue';
 import hikesNew from '../views/hikesNew.vue';
 import PicturesNew from '../views/picturesNew.vue';
+import Show from '../views/hikeShow.vue';
 import Signup from '../views/Signup.vue';
 import Login from '../views/Login.vue';
 import Logout from '../views/Logout.vue';
@@ -46,6 +47,12 @@ Vue.use(VueRouter)
     name: 'picturesNew',
     component: PicturesNew
   },
+  {
+    path: '/hikes/:id',
+    name: 'Show',
+    component: Show
+  },
+
   {
     path: '/about',
     name: 'About',
