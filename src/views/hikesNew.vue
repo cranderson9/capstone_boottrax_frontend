@@ -3,12 +3,12 @@
 <template>
   <div class="New Hike">
     <h1>{{ message }}</h1>
-    <p> Starting location:<input type='text' v-model='startLocation'></p>
-    <p> End location:<input type='text' v-model='endLocation'></p>
+    <!-- <p> Starting location:<input type='text' v-model='startLocation'></p>
+    <p> End location:<input type='text' v-model='endLocation'></p> -->
     <p> Miles:<input type='text' v-model='miles'></p>
     <p> Notes:<input type='text' v-model='notes'></p>
-    <p> Pictures:<input type='text' v-model='pictures'></p>
-    <button v-on:click='newHike()'>Start New Hike</button>
+    <!-- <p> Pictures:<input type='text' v-model='pictures'></p> -->
+    <button v-on:click='newHike()'>Save Hike</button>
     <div id= 'map'></div>
   </div>
 </template>
@@ -23,7 +23,7 @@ import axios from 'axios';
 export default {
   data: function() {
     return {
-      message: "Start a new hike",
+      message: "Log a hike",
 
       startLocation: "",
       endLocation: "",
@@ -57,8 +57,8 @@ export default {
     newHike: function() {
       console.log('starting a hike');
       var params = {
-        start_location: this.startLocation,
-        end_location: this.endLocation,
+        // start_location: this.startLocation,
+        // end_location: this.endLocation,
         notes: this.notes, 
         miles: this.miles,
         pictures: this.pictures
