@@ -8,6 +8,7 @@ import Show from '../views/hikeShow.vue';
 import Signup from '../views/Signup.vue';
 import Login from '../views/Login.vue';
 import Logout from '../views/Logout.vue';
+import Friends from '../views/Friends.vue';
 
 Vue.use(VueRouter)
 
@@ -51,6 +52,11 @@ Vue.use(VueRouter)
     path: '/hikes/:id',
     name: 'Show',
     component: Show
+  },
+  {
+    path: '/friends',
+    name: 'Friends',
+    component: Friends
   },
 
   {

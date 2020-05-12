@@ -17,11 +17,11 @@
             <h2>Menu</h2>
             <ul class="links">
               <li><a href="/">Home</a></li>
-              <li><a href="/hikes">Generic</a></li>
-              <li><a href="/leaderboard">Elements</a></li>
-              <li><a href="/login">Log In</a></li>
-              <li><a href="/logout">Sign Up</a></li>
-              <li><a href="/signup">Sign Up</a></li>
+              <li><a href="/hikes">All Hikes</a></li>
+              <li><a href="/friends">Friends</a></li>
+              <li><a v-if="!isLoggedIn()" href="/login">Log In</a></li>
+              <li><a v-if="isLoggedIn()" href="/logout">Logout</a></li>
+              <li><a v-if="!isLoggedIn()" href="/signup">Sign Up</a></li>
             </ul>
             <a href="#" class="close">Close</a>
           </div>
@@ -36,7 +36,7 @@
             </ul>
           </div>
         </section>
-        
+
     </div>
   </div>
 </template>
