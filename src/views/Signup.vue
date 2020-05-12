@@ -1,5 +1,13 @@
 <template>
   <div class="signup">
+    <!-- Banner -->
+    <section id="banner">
+      <div class="inner">
+        <div class="logo"><span class="icon fa-gem"></span></div>
+        <h2>Signup</h2>
+        <p>This is an important decision. You should probably check with mom first</a></p>
+      </div>
+    </section>
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>Signup</h1>

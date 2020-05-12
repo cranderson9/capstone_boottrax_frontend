@@ -1,7 +1,19 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
-    
+    <!-- Banner -->
+    <section id="banner">
+      <div class="inner">
+        <div class="logo"><span class="icon fa-gem"></span></div>
+        <h2>BootTrax</h2>
+        <p>The hike doesn't stop after you leave the trail</a></p>
+    <a href="/hikes/new" class="button primary">Log a hike</a>
+      </div>
+    </section>
+
+   
+
+      
+
     
   </div>
 </template>
@@ -21,10 +33,6 @@ export default {
     };
   },
   created: function() {
-    axios.get("/api/users").then(response => {
-      console.log(response.data);
-      this.users = response.data;
-    });
   },
   methods: {}
 };

@@ -1,5 +1,13 @@
 <template>
   <div class="login">
+    <!-- Banner -->
+    <section id="banner">
+      <div class="inner">
+        <div class="logo"><span class="icon fa-gem"></span></div>
+        <h2>Login</h2>
+        <p>Just type it in correct the first time...</a></p>
+      </div>
+    </section>
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>Login</h1>

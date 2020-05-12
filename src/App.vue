@@ -5,7 +5,7 @@
 
       <!-- Header -->
         <header id="header" class="alt">
-          <h1><a href="index.html">Solid State</a></h1>
+          <h1><a href="/">BootTrax</a></h1>
           <nav>
             <a href="#menu">Menu</a>
           </nav>
@@ -17,8 +17,8 @@
             <h2>Menu</h2>
             <ul class="links">
               <li><a href="/">Home</a></li>
-              <li><a href="/hikes">All Hikes</a></li>
-              <li><a href="/friends">Friends</a></li>
+              <li><a v-if="isLoggedIn()" href="/hikes">All Hikes</a></li>
+              <li><a v-if="isLoggedIn()" href="/friends">Friends</a></li>
               <li><a v-if="!isLoggedIn()" href="/login">Log In</a></li>
               <li><a v-if="isLoggedIn()" href="/logout">Logout</a></li>
               <li><a v-if="!isLoggedIn()" href="/signup">Sign Up</a></li>
