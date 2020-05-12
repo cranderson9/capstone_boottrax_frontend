@@ -1,34 +1,43 @@
 <template>
   <div id="app">
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">BootTrax</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/hikes">All Hikes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/hikes/new">New Hike</a>
-      </li>
-      <li class="nav-item">
-        <a v-if="!isLoggedIn()" class="nav-link" href="/login">Login</a>
-      </li>
-      <li class="nav-item">
-        <a v-if="isLoggedIn()" class="nav-link" href="/logout">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a v-if="!isLoggedIn()" class="nav-link" href="/signup">Signup</a>
-      </li>
-    </ul>
-  </div>
-</nav> -->
-    <router-view/>
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+      <!-- Header -->
+        <header id="header" class="alt">
+          <h1><a href="index.html">Solid State</a></h1>
+          <nav>
+            <a href="#menu">Menu</a>
+          </nav>
+        </header>
+
+      <!-- Menu -->
+        <nav id="menu">
+          <div class="inner">
+            <h2>Menu</h2>
+            <ul class="links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/hikes">Generic</a></li>
+              <li><a href="/leaderboard">Elements</a></li>
+              <li><a href="/login">Log In</a></li>
+              <li><a href="/logout">Sign Up</a></li>
+              <li><a href="/signup">Sign Up</a></li>
+            </ul>
+            <a href="#" class="close">Close</a>
+          </div>
+        </nav>
+      <router-view/> 
+
+      <!-- Footer -->
+        <section id="footer">
+          <div class="inner">
+            <ul class="copyright">
+              <li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+          </div>
+        </section>
+        
+    </div>
   </div>
 </template>
 
