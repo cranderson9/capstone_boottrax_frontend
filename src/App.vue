@@ -27,6 +27,8 @@
           </div>
         </nav>
       <router-view/> 
+      <!-- Wrapper -->
+    
 
       <!-- Footer -->
         <section id="footer">

@@ -8,9 +8,10 @@
         <p>This is an important decision. You should probably check with mom first</a></p>
       </div>
     </section>
+
+    
     <div class="container">
       <form v-on:submit.prevent="submit()">
-        <h1>Signup</h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>

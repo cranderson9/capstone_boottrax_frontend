@@ -8,6 +8,8 @@
         <p>The hike doesn't stop after you leave the trail</a></p>
     <a href="/hikes/new" class="button primary">Log a hike</a>
       </div>
+
+      
     </section>
 
    
