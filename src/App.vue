@@ -1,34 +1,62 @@
 <template>
   <div id="app">
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">BootTrax</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/hikes">All Hikes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/hikes/new">New Hike</a>
-      </li>
-      <li class="nav-item">
-        <a v-if="!isLoggedIn()" class="nav-link" href="/login">Login</a>
-      </li>
-      <li class="nav-item">
-        <a v-if="isLoggedIn()" class="nav-link" href="/logout">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a v-if="!isLoggedIn()" class="nav-link" href="/signup">Signup</a>
-      </li>
-    </ul>
-  </div>
-</nav> -->
-    <router-view/>
+    <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Boottrax</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/hikes">All Hikes</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/friends">Friends</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/signup">Signup</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">Login</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <router-view/>
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">+1 (555) 902-8832</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+    
   </div>
 </template>
 
