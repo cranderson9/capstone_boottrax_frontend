@@ -2,7 +2,6 @@
 
 <template>
   <div class="New Hike">
-    <h1>{{ message }}</h1>
     <!-- <p> Starting location:<input type='text' v-model='startLocation'></p>
     <p> End location:<input type='text' v-model='endLocation'></p> -->
     <p> Name of hike:<input type='text' v-model='name'></p>
