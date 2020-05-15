@@ -14,11 +14,11 @@
         <section class="signup-section" id="new-hike">
           <div class="container">
               <div class="row">
-                  <div class="col-md-10 col-lg-8 mx-auto text-center">
-                    <h1> Name of hike:<input type='text' v-model='name'></h1>
-                    <h1> Miles:<input type='text' v-model='miles'></h1>
-                    <h1> Notes:<input type='text' v-model='notes'></h1>
-                    <button v-on:click='newHike()'>Save Hike</button>
+                  <div class="col-md-12 col-lg-8 mx-auto text-center">
+                    <h1> Trail  <input type='text' v-model='name'></h1>
+                    <h1> Miles <input type='text' v-model='miles'></h1>
+                    <h1> Notes <input type='text' v-model='notes'></h1>
+                    <button class="btn-lg" v-on:click='newHike()'>Save Hike</button>
                   </div>
               </div>
           </div>
@@ -41,11 +41,30 @@ export default {
       miles: "",
       name: "",
       notes: "",
-      pictures: "",
+      pictures: "", 
       errors: [],
     };
   },
-  created: function() {},
-  methods: {}
+  created: function() {
+    
+  },
+  methods: {
+    newHike: function() {
+      console.log('starting a hike');
+      var params = {
+        notes: this.notes, 
+        name: this.name, 
+        miles: this.miles,
+        pictures: this.pictures
+      };
+      axios.post('/api/hikes', params).then(response => {
+        console.log(response.data);
+        this.$router.push("/hikes/pictures");
+      }).catch(error => {
+        this.errors = error.response.data.errors;
+        this.status = error.response.status;
+      });
+    }
+  }
 };
 </script>

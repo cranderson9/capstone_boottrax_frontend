@@ -1,6 +1,6 @@
 <template>
 <div>
-  <!-- !-- Masthead --> -->
+  <!-- !-- Masthead -->
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
@@ -9,7 +9,7 @@
                     <a class="btn btn-primary js-scroll-trigger" href="#new-hike">Add a hike</a>
                 </div>
             </div>
-        </header>
+        </header> -->
     <table class="table table-striped table-dark">
       <thead>
         <tr>

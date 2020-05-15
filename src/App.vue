@@ -8,9 +8,9 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">All Hikes</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/friends">Friends</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Login</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Logout</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Signup</a></li>
+                        <li class="/friends"><a class="nav-link js-scroll-trigger" href="/login">Login</a></li>
+                        <li class="/login"><a class="nav-link js-scroll-trigger" href="/logout">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/signup">Signup</a></li>
                     </ul>
                 </div>
             </div>
