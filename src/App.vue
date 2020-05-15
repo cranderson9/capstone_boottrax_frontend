@@ -9,6 +9,7 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a v-if="isLoggedIn()" class="nav-link js-scroll-trigger" href="/hikes">All Hikes</a></li>
                         <li class="nav-item"><a v-if="isLoggedIn()" class="nav-link js-scroll-trigger" href="#friends">Friends</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/map">Map</a></li>
                         <li class="nav-item"><a v-if="!isLoggedIn()" class="nav-link js-scroll-trigger" href="/login">Login</a></li>
                         <li class="/login"><a v-if="isLoggedIn()" class="nav-link js-scroll-trigger" href="/logout">Logout</a></li>
                         <li class="nav-item"><a v-if="!isLoggedIn()" class="nav-link js-scroll-trigger" href="/signup">Signup</a></li>

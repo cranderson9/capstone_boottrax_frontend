@@ -7,6 +7,7 @@
                     <h1 class="mx-auto my-0 text-uppercase">BootTrax</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">The hike doesn't stop when you leave the trail</h2>
                     <a class="btn btn-primary js-scroll-trigger" v-if="isLoggedIn()" href="#new-hike">Add a hike</a>
+                    <a class="btn btn-primary js-scroll-trigger" v-if="!isLoggedIn()" href="/login">Login</a>
                 </div>
             </div>
         </header>
@@ -91,10 +92,11 @@
         </header> 
         <!-- !-- Map -->
         <header class="masthead" id="#map">
-                
-                <div id= 'map'></div>
+                <div class="d-flex justify-content-center">
+                  <div id= 'map'></div>
+                </div>
             
-        </header> -->
+        </header> 
     
         
         
@@ -104,7 +106,7 @@
 
 <style>
 
-#map { position: center; top: 10; bottom: 10; height: 50%; width: 50%; }
+#map { position: absolute; top: 10; bottom: 10; height: 85%; width: 85%; margin: auto; }
 </style>
 
 <script>
@@ -130,8 +132,8 @@ export default {
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/outdoors-v11',
-      center: [-96, 37.8], // starting position
-      zoom: 5 // starting zoom
+      center: [-88.228928, 43.521030], // starting position
+      zoom: 10 // starting zoom
     });
     // Add geolocate control to the map.
     map.addControl(
