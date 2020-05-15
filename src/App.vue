@@ -1,4 +1,5 @@
 <template>
+
 <div id="app">
     <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -18,13 +19,13 @@
         
         <router-view/>
         
-        
-        
+
        
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Cale Anderson 2020</div></footer>
   
 </div>
+
 
 </template>
 

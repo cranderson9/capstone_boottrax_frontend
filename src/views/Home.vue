@@ -99,6 +99,7 @@
         
         
   </div>
+
 </template>
 
 <style>
@@ -113,7 +114,6 @@ import axios from 'axios';
 export default {
   data: function() {
     return {
-
       miles: "",
       name: "",
       notes: "",

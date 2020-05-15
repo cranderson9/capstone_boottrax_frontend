@@ -1,12 +1,11 @@
 <template>
-
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
                     <div class="signup">
+
     <div class="container">
       <form v-on:submit.prevent="submit()">
-        <h1>Signup</h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>

@@ -1,6 +1,13 @@
 <template>
-  <div class="Home">
-    <h1>{{ message }}</h1>
+  <div class="Show">
+    <!-- Banner -->
+    <section id="banner">
+      <div class="inner">
+        <div class="logo"><span class="icon fa-gem"></span></div>
+        <h2>{{hike.name}}</h2>
+        <p>button here to edit hike</a></p>
+      </div>
+    </section>
     <div>
       <p>id: {{hike.id}}</p>
       <p>Name: {{hike.name}}</p>
