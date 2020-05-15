@@ -6,23 +6,66 @@
                 <div class="mx-auto text-center">
                     <h1 class="mx-auto my-0 text-uppercase">BootTrax</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">The hike doesn't stop when you leave the trail</h2>
-                    <a class="btn btn-primary js-scroll-trigger" href="#new-hike">Add a hike</a>
+                    <a class="btn btn-primary js-scroll-trigger" v-if="isLoggedIn()" href="#new-hike">Add a hike</a>
                 </div>
             </div>
         </header>
       <!-- New hike-->
-        <section class="signup-section" id="new-hike">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-12 col-lg-8 mx-auto text-center">
-                    <h1> Trail  <input type='text' v-model='name'></h1>
-                    <h1> Miles <input type='text' v-model='miles'></h1>
-                    <h1> Notes <input type='text' v-model='notes'></h1>
-                    <button class="btn-lg" v-on:click='newHike()'>Save Hike</button>
-                  </div>
-              </div>
-          </div>
-        </section>
+      <header class="masthead" id='new-hike'>
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                                 <div class="signup">
+    <div class="container">
+      <form v-on:submit.prevent="submit()">
+        <h1>ADD A HIKE</h1>
+        
+        <div class="form-group">
+          <label>Name of Hike</label> 
+          <input type="text" class="form-control" v-model="name">
+        </div>
+        <div class="form-group">
+          <label>Miles</label>
+          <input type="text" class="form-control" v-model="miles">
+        </div>
+        
+        <div class="form-group">
+          <label>Comments </label>
+          <input type="text" class="form-control" v-model="notes">
+        </div>
+        <a class="btn btn-primary js-scroll-trigger" v-on:click="newHike()" href="#add-pictures">Add a hike</a>
+      </form>
+    </div>
+  </div>
+
+                </div>
+            </div>
+        </header>
+      <!-- Add Pictures-->
+      <header class="masthead" id='add-pictures'>
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                                 <div class="signup">
+    <div class="container">
+      <form v-on:submit.prevent="submit()">
+        <h1>PICTURES</h1>
+        
+        <div class="form-group">
+          <label>Picture URL</label> 
+          <input type="text" class="form-control" v-model="name">
+        </div>
+        <div class="form-group">
+          <label>Comments</label>
+          <input type="text" class="form-control" v-model="miles">
+        </div>
+        <a class="btn btn-primary js-scroll-trigger" v-on:click="addPictures()" href="/hikes">Add a hike</a>
+      </form>
+    </div>
+  </div>
+
+                </div>
+            </div>
+        </header>
+        
         
   </div>
 </template>
@@ -41,8 +84,9 @@ export default {
       miles: "",
       name: "",
       notes: "",
-      pictures: "", 
       errors: [],
+      picture_file: "",
+      comments: ""
     };
   },
   created: function() {
@@ -59,11 +103,31 @@ export default {
       };
       axios.post('/api/hikes', params).then(response => {
         console.log(response.data);
-        this.$router.push("/hikes/pictures");
       }).catch(error => {
         this.errors = error.response.data.errors;
         this.status = error.response.status;
       });
+    },
+    isLoggedIn: function() {
+      // console.log('i am checking login status');
+      if (localStorage.getItem('jwt')) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    addPictures: function() {
+      console.log('adding pictures');
+      var params = {
+        picture_file: this.picture_file,
+        comments: this.comments
+      };
+      axios.post('/api/pictures', params).then(response => {
+        console.log(response.data);
+      }).catch(error => {
+        this.errors = error.response.data.errors;
+        this.status = error.response.status;
+      })
     }
   }
 };

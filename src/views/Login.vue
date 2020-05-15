@@ -1,6 +1,10 @@
 <template>
-  <div class="login">
-    <div class="container">
+
+<header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+    <div class="login">
+      <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>Login</h1>
         <ul>
@@ -16,9 +20,14 @@
         </div>
         <input type="submit" class="btn btn-primary" value="Submit">
       </form>
+        </div>
     </div>
-  </div>
+    </div>
+    </div>
+</header>
+  
 </template>
+
 
 <script>
 import axios from "axios";
