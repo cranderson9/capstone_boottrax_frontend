@@ -65,12 +65,45 @@
                 </div>
             </div>
         </header>
+
+        <!-- !-- Friends -->
+        <header class="masthead" id="friends">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="table">
+                    <table class="table table-striped table-dark">
+                      <thead>
+                        <tr>
+                          <th scope="col">First</th>
+                          <th scope="col">Last</th>
+                          <th scope="col">Miles</th>
+                        </tr>
+                      </thead>
+                      <tbody div v-bind:key="user.id" v-for="user in users">
+                        <tr>
+                          <td>{{user.first_name}}</td>
+                          <td>{{user.last_name}}</td>
+                          <td>{{user.total_miles}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </header> 
+        <!-- !-- Map -->
+        <header class="masthead" id="#map">
+                
+                <div id= 'map'></div>
+            
+        </header> -->
+    
         
         
   </div>
 </template>
 
 <style>
+
+#map { position: center; top: 10; bottom: 10; height: 50%; width: 50%; }
 </style>
 
 <script>
@@ -86,12 +119,37 @@ export default {
       notes: "",
       errors: [],
       picture_file: "",
-      comments: ""
+      comments: "",
+      users: []
     };
   },
-  created: function() {
-    
+  mounted: function() {
+    var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+ 
+    mapboxgl.accessToken = process.env.VUE_APP_MY_API_KEY;
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/outdoors-v11',
+      center: [-96, 37.8], // starting position
+      zoom: 5 // starting zoom
+    });
+    // Add geolocate control to the map.
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      })
+    ); 
   },
+  created: function() {
+    axios.get("/api/users").then(response => {
+      console.log(response.data);
+      this.users = response.data;
+    })
+  },
+  
   methods: {
     newHike: function() {
       console.log('starting a hike');
