@@ -1,15 +1,9 @@
 <template>
-  <div class="signup">
-    <!-- Banner -->
-    <section id="banner">
-      <div class="inner">
-        <div class="logo"><span class="icon fa-gem"></span></div>
-        <h2>Signup</h2>
-        <p>This is an important decision. You should probably check with mom first</a></p>
-      </div>
-    </section>
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <div class="signup">
 
-    
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <ul>
@@ -39,6 +33,10 @@
       </form>
     </div>
   </div>
+                </div>
+            </div>
+        </header>
+  
 </template>
 
 <script>

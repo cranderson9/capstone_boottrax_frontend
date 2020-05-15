@@ -1,32 +1,33 @@
 <template>
-  <div class="login">
-    <!-- Banner -->
-    <section id="banner">
-      <div class="inner">
-        <div class="logo"><span class="icon fa-gem"></span></div>
-        <h2>Login</h2>
-        <p>Just type it in correct the first time...</a></p>
+  <header class="masthead">
+      <div class="container d-flex h-100 align-items-center">
+          <div class="mx-auto text-center">
+      <div class="login">
+        <div class="container">
+
+        <form v-on:submit.prevent="submit()">
+          <h1>Login</h1>
+          <ul>
+            <li class="text-danger" v-for="error in errors">{{ error }}</li>
+          </ul>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="email" class="form-control" v-model="email">
+          </div>
+          <div class="form-group">
+            <label>Password:</label>
+            <input type="password" class="form-control" v-model="password">
+          </div>
+          <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+          </div>
       </div>
-    </section>
-    <div class="container">
-      <form v-on:submit.prevent="submit()">
-        <h1>Login</h1>
-        <ul>
-          <li class="text-danger" v-for="error in errors">{{ error }}</li>
-        </ul>
-        <div class="form-group">
-          <label>Email:</label>
-          <input type="email" class="form-control" v-model="email">
-        </div>
-        <div class="form-group">
-          <label>Password:</label>
-          <input type="password" class="form-control" v-model="password">
-        </div>
-        <input type="submit" class="btn btn-primary" value="Submit">
-      </form>
-    </div>
-  </div>
+      </div>
+      </div>
+  </header>
+  
 </template>
+
 
 <script>
 import axios from "axios";
