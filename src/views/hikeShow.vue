@@ -4,23 +4,15 @@
         <br>
         <br>
         <br>
-        <br>
        
-        <div class="container" >
-          <div class="image">
+        <div class="center" id="show">
             <img v-bind:src="hike.pictures[0] && hike.pictures[0].picture_file">
-          </div>
-          <div class="card-inner">
-            <div class="header">
               <h2>{{hike.name}}</h2>
               <h5>{{hike.miles}} miles</h5>
-            </div>
-            <div class="content">
               <p>{{hike.notes}}</p>
-            </div>
-          </div>
-          <button class="btn btn-primary" type="button">Edit this hike</button>
+              <button class="btn btn-primary" v-on:click="editHike()" type="button">Edit this hike</button>   
         </div>
+          
         
       </header>
   
@@ -44,6 +36,11 @@ export default {
       this.hike = response.data;
     });
   },
-  methods: {}
+  methods: {
+    editHike() {
+      console.log('going to edit the hike')
+      this.$router.push(`/hikes/${this.$route.params.id}/edit`)
+    }
+  }
 };
 </script>
