@@ -30,6 +30,10 @@
         </div>
         
         <div class="form-group">
+          <label>Picture </label>
+          <input type="text" class="form-control" v-model="picture">
+        </div>
+        <div class="form-group">
           <label>Comments </label>
           <input type="text" class="form-control" v-model="notes">
         </div>
@@ -40,32 +44,7 @@
 
                 </div>
             </div>
-        </header>
-      <!-- Add Pictures-->
-      <header  class="masthead"  id='add-pictures'>
-            <div class="container d-flex h-100 align-items-center">
-                <div class="mx-auto text-center">
-                                 <div class="signup">
-    <div class="container">
-      <form v-on:submit.prevent="submit()">
-        <h1>PICTURES</h1>
-        
-        <div class="form-group">
-          <label>Picture URL</label> 
-          <input type="text" class="form-control" v-model="name">
-        </div>
-        <div class="form-group">
-          <label>Comments</label>
-          <input type="text" class="form-control" v-model="miles">
-        </div>
-        <a class="btn btn-primary js-scroll-trigger" v-on:click="addPictures()" href="/hikes">Add a hike</a>
-      </form>
-    </div>
-  </div>
-
-                </div>
-            </div>
-        </header>
+      </header>
 
         <!-- !-- Friends -->
         <header class="masthead" id="friends">
@@ -116,12 +95,11 @@ import axios from 'axios';
 export default {
   data: function() {
     return {
-      miles: "",
       name: "",
+      miles: "",
+      picture: "",
       notes: "",
       errors: [],
-      picture_file: "",
-      comments: "",
       users: []
     };
   },
@@ -159,7 +137,7 @@ export default {
         notes: this.notes, 
         name: this.name, 
         miles: this.miles,
-        pictures: this.pictures
+        picture: this.picture
       };
       axios.post('/api/hikes', params).then(response => {
         console.log(response.data);
@@ -179,8 +157,7 @@ export default {
     addPictures: function() {
       console.log('adding pictures');
       var params = {
-        picture_file: this.picture_file,
-        comments: this.comments
+        picture_file: this.picture_file
       };
       axios.post('/api/pictures', params).then(response => {
         console.log(response.data);

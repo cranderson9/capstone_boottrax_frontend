@@ -6,7 +6,7 @@
         <br>
        
         <div class="center" id="show">
-            <img v-bind:src="hike.pictures[0] && hike.pictures[0].picture_file">
+            <img v-bind:src="hike.picture">
               <h2>{{hike.name}}</h2>
               <h5>{{hike.miles}} miles</h5>
               <p>{{hike.notes}}</p>

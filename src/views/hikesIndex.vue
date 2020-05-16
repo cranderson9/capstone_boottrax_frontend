@@ -11,7 +11,7 @@
             <div class="col-sm-3" v-for="hike in hikes">
               <div class="card">
                 <div class="image">
-                  <img v-bind:src="hike.pictures[0] && hike.pictures[0].picture_file">
+                  <img v-bind:src="hike.picture">
                 </div>
                 <div class="card-inner">
                   <div class="header">
