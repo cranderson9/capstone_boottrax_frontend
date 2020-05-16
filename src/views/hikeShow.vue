@@ -1,48 +1,17 @@
 <template>
-  <div class="Show">
-    <!-- Banner -->
-    <section id="banner">
-      <div class="inner">
-        <div class="logo"><span class="icon fa-gem"></span></div>
-        <h2>{{hike.name}}</h2>
-        <p>button here to edit hike</a></p>
-      </div>
-    </section>
-    <div>
-      <p>id: {{hike.id}}</p>
-      <p>Name: {{hike.name}}</p>
-      <p>Miles: {{hike.miles}}</p>
-      <p>Notes: {{hike.notes}}</p>
-          <div class="row">
-  <div class="col-md-4">
-    <div class="thumbnail">
-        <img v-bind:src="hike.pictures[0] && hike.pictures[0].picture_file">
-        <div class="caption">
-          <p>comments here</p>
-        </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="thumbnail">
-        <img v-bind:src="hike.pictures[1] && hike.pictures[1].picture_file"> 
-        <div class="caption">
-          <p>Comments here</p>
-        </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="thumbnail">
-        <img v-bind:src="hike.pictures[2] && hike.pictures[2].picture_file"> 
-        <div class="caption">
-          <p>comments here</p>
-        </div>
-      
-    </div>
-  </div>
-</div>
-      <hr> 
-    </div>
-  </div>
+  <!-- Show -->
+      <header class="masthead">
+          <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+              <div id="show">
+                <p>id: {{hike.id}}</p>
+                <p>Miles: {{hike.miles}}</p>
+                <p>Notes: {{hike.notes}}</p>
+                <img v-bind:src="hike.pictures[0] && hike.pictures[0].picture_file">
+              </div>
+            </div>
+          </div>
+      </header>
 </template>
 
 <style>
@@ -54,7 +23,6 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      message: "Here is your hike",
       hike: []
     };
   },

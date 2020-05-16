@@ -42,7 +42,7 @@
             </div>
         </header>
       <!-- Add Pictures-->
-      <header class="masthead" id='add-pictures'>
+      <header  class="masthead"  id='add-pictures'>
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
                                  <div class="signup">
