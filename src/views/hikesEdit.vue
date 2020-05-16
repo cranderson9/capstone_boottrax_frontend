@@ -23,6 +23,10 @@
       <br>
       <button class="btn btn-danger" v-on:click="deleteHike()">Delete this hike</button>
     </div>
+    <br>
+    <div>
+      <a href="javascript:history.go(-1)"> Go Back</a>  
+    </div>
   </div>
 </template>
 
@@ -62,7 +66,7 @@ export default {
     },
     deleteHike: function() {
       console.log("delete the hike")
-      axios.delete(`/api/hikes/${this.hikes.id}`).then(response => {
+      axios.delete(`/api/hikes/${this.hike.id}`).then(response => {
         console.log(response.data);
         this.$router.push('/hikes')
       });
