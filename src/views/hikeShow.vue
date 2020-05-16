@@ -1,17 +1,29 @@
 <template>
-  <!-- Show -->
+  <!-- Index -->
       <header class="masthead">
-          <div class="container d-flex h-100 align-items-center">
-            <div class="mx-auto text-center">
-              <div id="show">
-                <p>id: {{hike.id}}</p>
-                <p>Miles: {{hike.miles}}</p>
-                <p>Notes: {{hike.notes}}</p>
-                <img v-bind:src="hike.pictures[0] && hike.pictures[0].picture_file">
-              </div>
+        <br>
+        <br>
+        <br>
+        <br>
+       
+        <div class="container" >
+          <div class="image">
+            <img v-bind:src="hike.pictures[0] && hike.pictures[0].picture_file">
+          </div>
+          <div class="card-inner">
+            <div class="header">
+              <h2>{{hike.name}}</h2>
+              <h5>{{hike.miles}} miles</h5>
+            </div>
+            <div class="content">
+              <p>{{hike.notes}}</p>
             </div>
           </div>
+          <button class="btn btn-primary" type="button">Edit this hike</button>
+        </div>
+        
       </header>
+  
 </template>
 
 <style>

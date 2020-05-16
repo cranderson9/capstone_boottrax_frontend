@@ -5,6 +5,7 @@ import hikesIndex from '../views/hikesIndex.vue';
 import hikesNew from '../views/hikesNew.vue';
 import PicturesNew from '../views/picturesNew.vue';
 import Show from '../views/hikeShow.vue';
+import hikesEdit from '../views/hikesEdit.vue';
 import Signup from '../views/Signup.vue';
 import Login from '../views/Login.vue';
 import Logout from '../views/Logout.vue';
@@ -52,6 +53,11 @@ Vue.use(VueRouter)
     path: '/hikes/:id',
     name: 'Show',
     component: Show
+  },
+  {
+    path: '/hikes/:id/edit',
+    name: 'hikesEdit',
+    component: hikesEdit
   },
   {
     path: '/map',
