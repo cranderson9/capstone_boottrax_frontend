@@ -37,7 +37,7 @@
           <label>Comments </label>
           <input type="text" class="form-control" v-model="notes">
         </div>
-        <a class="btn btn-primary js-scroll-trigger" v-on:click="newHike()" href="/hikes">Add a hike</a>
+        <a class="btn btn-primary js-scroll-trigger" v-on:click="newHike()" >Add a hike</a>
       </form>
     </div>
   </div>
@@ -48,6 +48,13 @@
 
         <!-- !-- Friends -->
         <header class="masthead" id="friends">
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="d-flex justify-content-center ">
+          <h1>{{message}}</h1>
+          </div>
             <div class="container d-flex h-100 align-items-center">
                 <div class="table">
                     <table class="table table-striped table-dark">
@@ -68,14 +75,17 @@
                     </table>
                 </div>
             </div>
+         
         </header> 
         <!-- !-- Map -->
+        
         <header class="masthead" id="#map">
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
+                <h1>Find a Spot to Hike</h1>
                 <div class="d-flex justify-content-center">
                   <div id= 'map'></div>
                 </div>
@@ -89,6 +99,7 @@
 </template>
 
 <style>
+
 
 #map { position: absolute; top: 10; bottom: 10; height: 85%; width: 85%; margin: auto; }
 </style>
@@ -105,7 +116,8 @@ export default {
       picture: "",
       notes: "",
       errors: [],
-      users: []
+      users: [],
+      message: "BootTrax Brag Board"
     };
   },
   mounted: function() {
@@ -146,6 +158,7 @@ export default {
       };
       axios.post('/api/hikes', params).then(response => {
         console.log(response.data);
+        this.$router.push(`hikes/${response.data.id}`)
       }).catch(error => {
         this.errors = error.response.data.errors;
         this.status = error.response.status;
