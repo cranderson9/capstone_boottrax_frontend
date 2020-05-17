@@ -37,7 +37,7 @@
           <label>Comments </label>
           <input type="text" class="form-control" v-model="notes">
         </div>
-        <a class="btn btn-primary js-scroll-trigger" v-on:click="newHike()" href="#add-pictures">Add a hike</a>
+        <a class="btn btn-primary js-scroll-trigger" v-on:click="newHike()" href="/hikes">Add a hike</a>
       </form>
     </div>
   </div>
@@ -71,6 +71,11 @@
         </header> 
         <!-- !-- Map -->
         <header class="masthead" id="#map">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
                 <div class="d-flex justify-content-center">
                   <div id= 'map'></div>
                 </div>
@@ -154,18 +159,6 @@ export default {
         return false;
       }
     },
-    addPictures: function() {
-      console.log('adding pictures');
-      var params = {
-        picture_file: this.picture_file
-      };
-      axios.post('/api/pictures', params).then(response => {
-        console.log(response.data);
-      }).catch(error => {
-        this.errors = error.response.data.errors;
-        this.status = error.response.status;
-      })
-    }
   }
 };
 </script>

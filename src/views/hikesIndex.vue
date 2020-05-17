@@ -5,8 +5,12 @@
         <br>
         <br>
         <br>
-       
+        <div class="mx-auto text-center">
+        <h1 class="mx-auto my-0 text-uppercase">All Hikes</h1>
+        <br>
+        </div>
         <div class="container" >
+         
           <div class="row">
             <div class="col-sm-3" v-for="hike in hikes">
               <div class="card">
@@ -23,6 +27,7 @@
                 </div>
                   </div>
               </div>
+          <br>
             </div>
           </div>
         </div>
@@ -37,6 +42,9 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+h1 {
+  align-items: center;
 }
 </style>
 

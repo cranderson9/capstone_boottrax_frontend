@@ -4,13 +4,16 @@
         <br>
         <br>
         <br>
-       
-        <div class="center" id="show">
-            <img v-bind:src="hike.picture">
-              <h2>{{hike.name}}</h2>
+        <br>
+       <div class="d-flex justify-content-center ">
+          <div class="center" id="show">
+            <h1>{{hike.name}}</h1>
+            <img clas v-bind:src="hike.picture">
+            <br>  
               <h5>{{hike.miles}} miles</h5>
-              <p>{{hike.notes}}</p>
-              <button class="btn btn-primary" v-on:click="editHike()" type="button">Edit this hike</button>   
+              <h5>{{hike.notes}}</h5>
+              <button class="btn btn-primary" v-on:click="editHike()" type="button">Edit this hike</button> 
+          </div>  
         </div>
           
         
@@ -19,6 +22,12 @@
 </template>
 
 <style>
+img {
+  width: 100%;
+}
+h5 {
+  color: white
+}
 </style>
 
 <script>
@@ -27,7 +36,8 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      hike: []
+      hike: [],
+      message: ""
     };
   },
   created: function() {
