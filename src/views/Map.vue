@@ -5,8 +5,17 @@
     <br>
     <br>
     <br>
-    <div class="d-flex justify-content-center ">
+    <div class="d-flex justify-content-center">
       <h1>Find a Spot to Hike</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="gcse-search" enableAutoComplete="true" id="search"></div>
+      <div class="gcse-searchresults" data-defaultToImageSearch="true"></div>
+ 
+ </div>
+    <div >
+
+      <br>
     </div>
     <div class="d-flex justify-content-center">
       <div id= 'map'></div>
@@ -15,12 +24,11 @@
 
 </template>
 
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
-<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+
 
 <style>
 #map { position: absolute; top: 10; bottom: 10; height: 70%; width: 70%; margin: auto; }
-
+#search {width: 70%;}
 </style>
 
 <script>
