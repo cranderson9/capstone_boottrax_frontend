@@ -1,37 +1,43 @@
 <template>
-  <div class="edit hike">
-    <div class="container">
-      <form v-on:submit.prevent="submit()">
-        <h1>Edit Hike</h1>
-        <ul>
-          <li class="text-danger" v-for="error in errors">{{ error }}</li>
-        </ul>
-        <div class="form-group">
-          <label>Name:</label> 
-          <input type="text" class="form-control" v-model="hike.name">
+<header class="masthead">
+  <div class="container d-flex h-100 align-items-center">
+    <div class="mx-auto text-center">
+      <div class="edit hike">
+        <div class="container">
+          <form v-on:submit.prevent="submit()">
+            <h1>Edit Hike</h1>
+              <ul>
+                <li class="text-danger" v-for="error in errors">{{ error }}</li>
+              </ul>
+            <div class="form-group">
+              <label>Name:</label> 
+              <input type="text" class="form-control" v-model="hike.name">
+            </div>
+            <div class="form-group">
+              <label>Miles:</label>
+              <input type="text" class="form-control" v-model="hike.miles">
+            </div>
+            <div class="form-group">
+              <label>Picture:</label>
+              <input type="text" class="form-control" v-model="hike.picture">
+            </div>
+            <div class="form-group">
+              <label>Comments:</label>
+              <input type="text" class="form-control" v-model="hike.notes">
+            </div>
+            <input type="submit" class="btn btn-primary"  value="Save">
+          </form>
+          <br>
+          <button class="btn btn-danger" v-on:click="deleteHike()">Delete this hike</button>
         </div>
-        <div class="form-group">
-          <label>Miles:</label>
-          <input type="text" class="form-control" v-model="hike.miles">
-        </div>
-        <div class="form-group">
-          <label>Picture:</label>
-          <input type="text" class="form-control" v-model="hike.picture">
-        </div>
-        <div class="form-group">
-          <label>Comments:</label>
-          <input type="text" class="form-control" v-model="hike.notes">
-        </div>
-        <input type="submit" class="btn btn-primary"  value="Save">
-      </form>
-      <br>
-      <button class="btn btn-danger" v-on:click="deleteHike()">Delete this hike</button>
-    </div>
-    <br>
-    <div>
+        <br>
+      <div>
       <a href="javascript:history.go(-1)"> Go Back</a>  
     </div>
   </div>
+  </div>
+  </div>
+  </header>
 </template>
 
 <script>
