@@ -15,14 +15,18 @@
 
 </template>
 
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+
 <style>
-#map { position: absolute; top: 10; bottom: 10; height: 85%; width: 85%; margin: auto; }
+#map { position: absolute; top: 10; bottom: 10; height: 70%; width: 70%; margin: auto; }
 
 </style>
 
 <script>
 
 import axios from 'axios';
+import mapboxgl from 'mapbox-gl';
 
 export default {
   data: function() {
@@ -40,15 +44,13 @@ export default {
       center: [-88.228928, 43.521030], // starting position
       zoom: 10 // starting zoom
     });
-    // Add geolocate control to the map.
+    // Add geocoder search to the map.
     map.addControl(
-      new mapboxgl.GeolocateControl({
-        positionOptions: {
-          enableHighAccuracy: true
-        },
-        trackUserLocation: true
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
       })
-    ); 
+    );  
   },
   methods: {}
 };
