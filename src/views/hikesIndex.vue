@@ -10,9 +10,19 @@
         <br>
         </div>
         <div class="container" >
-         
+         <input  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" v-model="nameFilter">
+         <datalist id="hikes">
+           <option v-for="hike in hikes ">{{hike.name}}</option>
+         </datalist>
+         <br>
+         <button v-on:click="sortByName()">Sort by name</button>
+         <button v-on:click="sortByMiles()">Sort by miles</button>
+         <br>
+         <br>
           <div class="row">
-            <div class="col-sm-3" v-for="hike in hikes">
+            <div class="col-sm-3" v-for="hike in orderBy(filterBy(hikes, nameFilter, 'name'), sortAttribute, 1)" v-on:click="currentHike = hike" v-bind:class="{selected: currentHike === hike}">
+
+            <!-- </div> -->
               <div class="card">
                 <div class="image">
                   <img v-bind:src="hike.picture">
@@ -20,7 +30,7 @@
                 <div class="card-inner">
                   <div class="header">
                     <h2><a v-bind:href="`/hikes/${hike.id}`">{{hike.name}}</a></h2>
-                    <h5>{{hike.miles}} miles</h5>
+                    <p>{{hike.miles}} miles</p>
                 </div>
                 <div class="content">
                   <p>{{hike.notes}}</p>
@@ -46,17 +56,26 @@ img {
 h1 {
   align-items: center;
 }
+h5 {
+  color: black
+}
 </style>
 
 <script>
 
 import axios from 'axios';
+import Vue2Filters from "vue2-filters";
 
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function() {
     return {
       message: `Hikes`,
-      hikes: []
+      hikes: [],
+      currentHike: {},
+      nameFilter: '',
+      sortAttribute: 'name',
+      hike: []
     };
   },
   created: function() {
@@ -65,6 +84,16 @@ export default {
       this.hikes = response.data;
     });
   },
-  methods: {}
+  methods: {
+    sortByName: function() {
+      console.log('ordering by Name');
+      console.log(this.sortAttribute);
+      this.sortAttribute = 'name';
+    },
+    sortByMiles: function() {
+      console.log('ordering by miles');
+      this.sortAttribute = 'miles';
+    },
+  }
 };
 </script>

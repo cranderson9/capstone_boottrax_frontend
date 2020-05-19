@@ -5,8 +5,17 @@
     <br>
     <br>
     <br>
-    <div class="d-flex justify-content-center ">
+    <div class="d-flex justify-content-center">
       <h1>Find a Spot to Hike</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="gcse-search" enableAutoComplete="true" id="search"></div>
+      <div class="gcse-searchresults" data-defaultToImageSearch="true"></div>
+ 
+ </div>
+    <div >
+
+      <br>
     </div>
     <div class="d-flex justify-content-center">
       <div id= 'map'></div>
@@ -15,14 +24,17 @@
 
 </template>
 
-<style>
-#map { position: absolute; top: 10; bottom: 10; height: 85%; width: 85%; margin: auto; }
 
+
+<style>
+#map { position: absolute; top: 10; bottom: 10; height: 70%; width: 70%; margin: auto; }
+#search {width: 70%;}
 </style>
 
 <script>
 
 import axios from 'axios';
+import mapboxgl from 'mapbox-gl';
 
 export default {
   data: function() {
@@ -40,15 +52,13 @@ export default {
       center: [-88.228928, 43.521030], // starting position
       zoom: 10 // starting zoom
     });
-    // Add geolocate control to the map.
+    // Add geocoder search to the map.
     map.addControl(
-      new mapboxgl.GeolocateControl({
-        positionOptions: {
-          enableHighAccuracy: true
-        },
-        trackUserLocation: true
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
       })
-    ); 
+    );  
   },
   methods: {}
 };
