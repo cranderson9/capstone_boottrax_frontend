@@ -13,6 +13,9 @@
               <h5>{{hike.miles}} miles</h5>
               <h5>{{hike.notes}}</h5>
               <button class="btn btn-primary" v-on:click="editHike()" type="button">Edit this hike</button> 
+              <br>
+              <br>
+          <a href="javascript:history.go(-1)"> Go Back</a> 
           </div>  
         </div>
           
