@@ -20,10 +20,9 @@
          <br>
          <br>
           <div class="row">
-            <div class="col-sm-3" v-for="hike in filterBy(hikes, nameFilter, 'name')" v-on:click="currentHike = hike" v-bind:class="{selected: currentHike === hike}">
-            <div v-for="hike in orderBy(hikes, sortAttribute, 1)" v-on:click="currentHike = hike" v-bind:class="{selected: currentHike === hike}">
+            <div class="col-sm-3" v-for="hike in orderBy(filterBy(hikes, nameFilter, 'name'), sortAttribute, 1)" v-on:click="currentHike = hike" v-bind:class="{selected: currentHike === hike}">
 
-            </div>
+            <!-- </div> -->
               <div class="card">
                 <div class="image">
                   <img v-bind:src="hike.picture">
@@ -75,7 +74,7 @@ export default {
       hikes: [],
       currentHike: {},
       nameFilter: '',
-      sortAttribute: '',
+      sortAttribute: 'name',
       hike: []
     };
   },
@@ -88,6 +87,7 @@ export default {
   methods: {
     sortByName: function() {
       console.log('ordering by Name');
+      console.log(this.sortAttribute);
       this.sortAttribute = 'name';
     },
     sortByMiles: function() {
